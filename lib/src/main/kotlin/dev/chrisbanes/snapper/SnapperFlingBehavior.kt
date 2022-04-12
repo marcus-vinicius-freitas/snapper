@@ -407,7 +407,7 @@ public class SnapperFlingBehavior private constructor(
             )
         }
 
-        val currentItem = layoutInfo.currentItem!!
+        val currentItem = layoutInfo.currentItem ?: return velocityLeft
         if (currentItem.index != index || layoutInfo.distanceToIndexSnap(index) != 0) {
             // If we're not at the target index yet, spring to it
             velocityLeft = performSpringFling(
